@@ -2,6 +2,7 @@
 
 This directory contains the code for the AutoToon model, described in our paper [AutoToon: Automatic Geometric Warping for Face Cartoon Generation](https://arxiv.org/abs/2004.02377) published at WACV'20. This code takes in an input image (not necessarily aligned, and can also contain multiple faces), and outputs six images that represent the output of the AutoToon model. The instructions and specs for usage are detailed in [`test.py`](test.py). Please cite our work as described below if you use it.
 
+
 The components of the inference codebase are as follows:
 * [`test.py`](test.py) is the executable inference code. The usage and specs are detailed inside the main function. For convenience, example usage to run `test.py` is `test.py --in_dir in/ --out_dir out/ --scale 1` to run the inference code using the pretrained weights with the input image directory `./in/` and output directory `./out/`, and with exaggeration scale `1` for the model output.
 * [`test_utils.py`](test_utils.py) contains the helper functions and code for inference, and primarily those used for generating and saving the images.
@@ -11,6 +12,15 @@ The components of the inference codebase are as follows:
 * [`models`](models/) is the folder containing the model code and weights for the AutoToon model. `AutoToon.py` is the model definition and `autotoon_model.pth` contains the pretrained weights for the final model. `vggface2_senet.py` is the model definition for the SENet module used in AutoToon, and `senet50_ft_weight.pkl` contains the pretrained, finetuned weights for the SENet 50 on the VGGFace2 dataset, as provided by the authors.
 * [`in`](in/) is an example folder in which to put the desired input images. All images in this directory will be processed serially.
 * [`out`](out/) is an example folder to which the outputs of the model will be written. Both input and output directories are specified as arguments to the testing code in `test.py`.
+
+## Setup
+
+The code was tested using the following dependencies in addition to a default Anaconda installation:
+
+- tensorflow 2.2.0
+- Keras 2.4.3
+- dlib 19.20.0
+
 
 ## Usage
 
