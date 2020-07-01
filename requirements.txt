@@ -1,0 +1,4 @@
+dlib==19.20.0
+Keras==2.4.3
+tensorflow==2.2.0
+requests
