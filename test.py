@@ -58,8 +58,8 @@ if __name__ == "__main__":
                                                LANDMARKS_MODEL_URL, cache_subdir='temp'))
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('-i', '--in_dir', help='raw input images directory')
-    parser.add_argument('-o', '--out_dir', help='output images directory')
+    parser.add_argument('-i', '--in_dir', default="in", help='raw input images directory')
+    parser.add_argument('-o', '--out_dir', default="out", help='output images directory')
     parser.add_argument('-s', '--scale', type=float, default=1, help='cartoon scaling extent')
 
     args = parser.parse_args()
