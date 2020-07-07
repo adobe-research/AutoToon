@@ -1,6 +1,6 @@
 # AutoToon Code
 
-This directory contains the code for the AutoToon model, described in our paper [AutoToon: Automatic Geometric Warping for Face Cartoon Generation](https://arxiv.org/abs/2004.02377) published at WACV'20. This code takes in an input image (not necessarily aligned, and can also contain multiple faces), and outputs six images that represent the output of the AutoToon model. The instructions and specs for usage are detailed in [`test.py`](test.py). Please cite our work as described below if you use it.
+This directory contains the code for the AutoToon model, described in our paper [AutoToon: Automatic Geometric Warping for Face Cartoon Generation](https://arxiv.org/abs/2004.02377) published at WACV'20. See our project page [here](http://web.stanford.edu/~jxgong/autotoon.html). This code takes in an input image (not necessarily aligned, and can also contain multiple faces), and outputs six images that represent the output of the AutoToon model. The instructions and specs for usage are detailed in [`test.py`](test.py). Please cite our work as described below if you use it.
 
 
 The components of the inference codebase are as follows:
