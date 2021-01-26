@@ -72,10 +72,9 @@ class AutoToonModel(nn.Module):
         x_ = torch.arange(w).view(1, -1).expand(h, -1)
         y_ = torch.arange(h).view(-1, 1).expand(-1, w)
         grid = torch.stack([x_, y_], dim=0).float().to(self.device)
-        grid = grid.unsqueeze(0).expand(n, -1, -1, -1)
-        grid_out = grid.clone()
-        grid_out[:, 0, :, :] = 2 * grid[:, 0, :, :] / (w - 1) - 1
-        grid_out[:, 1, :, :] = 2 * grid[:, 1, :, :] / (h - 1) - 1
+        grid = grid.unsqueeze(0).expand(n, -1, -1, -1).clone()
+        grid[:, 0, :, :] = 2 * grid[:, 0, :, :] / (w - 1) - 1
+        grid[:, 1, :, :] = 2 * grid[:, 1, :, :] / (h - 1) - 1
         grid = grid + flow
         grid = grid.permute(0, 2, 3, 1)
         x = x.to(self.device)
